@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "4007e818-1710-4de1-b7e5-759e9dfbb3b9",
+		"name": "Dashboard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17797703"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" :\"test3\",\n    \"password\" :\"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/register",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test\",\n    \"password\" :\"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"6420821e47eee654ee49d8ec\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/delete",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Services",
+			"item": [
+				{
+					"name": "Weather",
+					"item": [
+						{
+							"name": "Temperature in a city",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"object_id\": \"64207ee6405dbaf81fbcd02c\",\n    \"body_params\": {\n        \"city\": \"lille\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/weather/refresh",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"weather",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Binance",
+					"item": [
+						{
+							"name": "Crypto Price on spot market",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"object_id\": \"64207ee6405dbaf81fbcd02c\",\n    \"body_params\": {\n        \"crypto\": \"BTCUSDT\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/crypto_spot/refresh",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"crypto_spot",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Crypto Price on future market",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"object_id\": \"64207ee6405dbaf81fbcd02c\",\n    \"body_params\": {\n        \"crypto\": \"BTCUSDT\"\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE_URL}}/crypto_future/refresh",
+									"host": [
+										"{{BASE_URL}}"
+									],
+									"path": [
+										"crypto_future",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Zeal",
+			"item": [
+				{
+					"name": "Get widgets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : \"642061cf12852c8e4b16570c\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/zeal/get_zeals",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"zeal",
+								"get_zeals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Widget",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"642061cf12852c8e4b16570c\",\n    \"service\": \"Weather\",\n    \"endpoint\": \"/weather/refresh\",\n    \"body_params\": {\n        \"city\": \"lille\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/zeal/create_zeal",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"zeal",
+								"create_zeal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete widget",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"64207a8ff0b62dc8d20a3168\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/zeal/delete_zeal",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"zeal",
+								"delete_zeal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit widget",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"_id\": \"642062b8e568f04bb0ab6e30\",\n    \"body_params\": {\n        \"city\": \"lausanne\"\n    },\n    \"posX\": \"-8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/zeal/edit_zeal",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"zeal",
+								"edit_zeal"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "About.json",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/about.json",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"about.json"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://zealier.dynamic-dns.net",
+			"type": "string"
+		},
+		{
+			"key": "zealier_id",
+			"value": "6404af841b8c9cda0dc6d3a4",
+			"type": "string"
+		}
+	]
+}
